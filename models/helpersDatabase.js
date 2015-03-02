@@ -1,6 +1,6 @@
 
 
-exports.saveToDatabase = function(db, collectionName, collectionObject) {
+exports.saveToDatabase = function(db, collectionName, collectionObject,callback) {
   var collection = db.get(collectionName);
   collection.insert(collectionObject, function(err, doc) {
     if (err) {
@@ -8,7 +8,7 @@ exports.saveToDatabase = function(db, collectionName, collectionObject) {
     }
     else {
       console.log("SUCCESS: write to db: " + collectionName);
-      return doc;
+      callback(err,doc);
     }
   });
 };

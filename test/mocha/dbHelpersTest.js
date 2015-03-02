@@ -32,29 +32,41 @@ describe('should add data',function(){
     done();
   });
 
-  after(function(done){
-    // monk('localhost/playlisterTest')
-    // .get('ppSpotifyCredentials')
-    console.log('DB: ' + db);
-    console.log('Collection Name; ' + collectionName);
-    db.collectionName.drop(function(err){
-      if(err) return done(err);
-    });
-    done();
-  });
+  // after(function(done){
+  //   // monk('localhost/playlisterTest')
+  //   // .get('ppSpotifyCredentials')
+  //   console.log('DB: ' + db);
+  //   console.log('Collection Name; ' + collectionName);
+  //   db.collectionName.drop(function(err){
+  //     if(err) return done(err);
+  //   });
+  //   done();
+  // });
 
-  it('should save and read data',function(done){
+  // it('should save and read data',function(done){
+  //   var db = monk('localhost/playlisterTest');
+  //   var collectionName = db.get('ppSpotifyCredentials');
+  //   var collectionObject = {spotifyID:"nameTest",spotifyAccessToken:'9999',
+  //                       spotifyRefreshToken:'8888'};
+  //   helpersDB.saveToDatabase(db, collectionName, collectionObject).
+  //     then(collectionName.findOne({}, function(err, doc){
+  //     if (err) return done(err);
+  //     console.log(doc);
+  //     should.exists(doc);
+  //     done();
+  //   }));
+  // });
+
+  it('should save data to db',function(done){
     var db = monk('localhost/playlisterTest');
     var collectionName = db.get('ppSpotifyCredentials');
     var collectionObject = {spotifyID:"nameTest",spotifyAccessToken:'9999',
-                        spotifyRefreshToken:'8888'};
-    helpersDB.saveToDatabase(db, collectionName, collectionObject).
-      then(collectionName.findOne({}, function(err, doc){
-      if (err) return done(err);
-      console.log(doc);
-      should.exists(doc);
-      done();
-    }));
+                            spotifyRefreshToken:'8888'};
+
+     helpersDB.saveToDatabase(db, collectionName, collectionObject,function(err,doc){
+       doc.spotifyID.should.be.exactly("nameTest"); 
+       done();
+     });                        
   });
 
 });
