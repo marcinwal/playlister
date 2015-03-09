@@ -1,5 +1,8 @@
 [![Code Climate](https://codeclimate.com/github/matteomanzo/Playlister/badges/gpa.svg)](https://codeclimate.com/github/matteomanzo/Playlister) [![Test Coverage](https://codeclimate.com/github/matteomanzo/Playlister/badges/coverage.svg)](https://codeclimate.com/github/matteomanzo/Playlister)
 
+
+Final project MakersAcademy course (team of 5 people: Hannah, Matteo, Andy, Jack and Marcin)
+
 TurnUp TuneIn
 =======================
 [Visit the website](https://turnuptunein.herokuapp.com)
