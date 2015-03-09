@@ -31,6 +31,9 @@ Then when the party goer leaves the range of the beacon (around 50m) their mobil
 - jQuery
 - HTML & CSS
 
+###Application 
+- Cordova
+
 ###Server
 - NodeJS
 - Express
